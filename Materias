@@ -1,0 +1,141 @@
+nombre = input("Por favor indique el nombre de la materia:  ")
+print("La materia a calcular es: " , nombre)
+
+
+pedir = int(input("1. Desea calcular la nota de los cuatro cortes \n2. Notas en un corte \n3. Saber cuanto debe sacar en el último corte para pasar de manera automatica \n4. Saber cuanto debe sacar en el último corte para pasar de manera manual\n Respuesta:  "))
+
+while pedir >=5 or pedir <=0:
+  print("Por favor ingrese un valor valido")
+  pedir = int(input("1. Desea calcular la nota de los cuatro cortes \n2. Notas en un corte \n3. Saber cuanto debe sacar en el último corte para pasar \n Respuesta:  "))
+
+
+if pedir ==1:
+  valor_1=int(input("Cuanto vale el primer corte:  "))
+  valor_2=int(input("Cuanto vale el segundo corte:  "))
+  valor_3=int(input("Cuanto vale el tercer corte:  "))
+  valor_4=int(input("Cuanto vale el cuarto corte:  "))
+
+  print("El primer corte vale:  ",valor_1 ,"%")
+  print("El Segundo corte vale:  ",valor_2,"%")
+  print("El tercer corte vale:  ",valor_3,"%")
+  print("El cuarto corte vale:  ",valor_4,"%")
+
+  valor_11=valor_1/100
+  valor_22=valor_2/100
+  valor_33=valor_3/100
+  valor_44=valor_4/100
+
+  corte_1 = int(input("Cual fue la nota del primer corte:  "))
+  corte_2 = int(input("Cual fue la nota del segundo corte:  "))
+  corte_3 = int(input("Cual fue la nota del tercer corte:  "))
+  corte_4 = int(input("Cual fue la nota del cuarto corte:  "))
+
+  corte_11= corte_1*valor_11
+  corte_22= corte_2*valor_22
+  corte_33= corte_3*valor_33
+  corte_44= corte_4*valor_44
+
+  total = 60
+
+  
+  if (corte_11+corte_22+corte_33+corte_44) <= total  :
+    print("Perdio la materia, a la proxima será")
+  else :
+    print("Paso la materia")
+
+if pedir==2:
+  print("Recuerde que entre actividades y parcial debe darle el 100%")
+
+  actividades = int(input("Cuanto porcentaje es de las actividades:  "))
+  parciales = int(input("Cuanto porcentaje es de los parciales:  "))
+  acti = actividades/100
+  parc=parciales/100
+  print("Las actividades valen:  ",actividades,"%")
+  print("Los parciales valen:  ",parciales,"%")
+  act_1=int(input("Cuanto saquo en la primera actividad:  "))
+  act_2=int(input("Cuanto saquo en la segunda actividad:  "))
+  act_3=int(input("Cuanto saquo en la tercera actividad:  "))
+
+  totalAct=  (act_1+ act_2+act_3)/3
+  resu=totalAct*acti
+  total1=60-resu
+  total2=total1/parc
+  sacar=total2*parc
+
+  print("Su promedio de actividades es: ",resu)
+  print("Debe sacar " , sacar , "en el parcial para que la nota le quede en 60")
+
+
+if pedir==3:
+  
+  valor_1=int(input("Cuanto vale el primer corte:  "))
+  valor_2=int(input("Cuanto vale el segundo corte:  "))
+  valor_3=int(input("Cuanto vale el tercer corte:  "))
+  valor_4=int(input("Cuanto vale el cuarto corte:  "))
+
+  print("El primer corte vale:  ",valor_1 ,"%")
+  print("El Segundo corte vale:  ",valor_2,"%")
+  print("El tercer corte vale:  ",valor_3,"%")
+  print("El cuarto corte vale:  ",valor_4,"%")
+
+  valor_11=valor_1/100
+  valor_22=valor_2/100
+  valor_33=valor_3/100
+  valor_44=valor_4/100
+  
+  corte_1 = int(input("Cual fue la nota del primer corte:  "))
+  corte_2 = int(input("Cual fue la nota del segundo corte:  "))
+  corte_3 = int(input("Cual fue la nota del tercer corte:  "))
+
+
+  corte_11= corte_1*valor_11
+  corte_22= corte_2*valor_22
+  corte_33= corte_3*valor_33
+
+  mini=60
+  total = (mini-corte_11-corte_22-corte_33)/0.3
+  print("Debe sacar: " ,total , "como nota mínima")
+
+if pedir ==4:
+  valor_1=int(input("Cuanto vale el primer corte:  "))
+  valor_2=int(input("Cuanto vale el segundo corte:  "))
+  valor_3=int(input("Cuanto vale el tercer corte:  "))
+  valor_4=int(input("Cuanto vale el cuarto corte:  "))
+
+  print("El primer corte vale:  ",valor_1 ,"%")
+  print("El Segundo corte vale:  ",valor_2,"%")
+  print("El tercer corte vale:  ",valor_3,"%")
+  print("El cuarto corte vale:  ",valor_4,"%")
+
+  valor_11=valor_1/100
+  valor_22=valor_2/100
+  valor_33=valor_3/100
+  valor_44=valor_4/100
+    
+  corte_1 = int(input("Cual fue la nota del primer corte:  "))
+  corte_2 = int(input("Cual fue la nota del segundo corte:  "))
+  corte_3 = int(input("Cual fue la nota del tercer corte:  "))
+  corte_4 = int(input("Cuanto cree que sacara?:  "))
+
+
+  corte_11= corte_1*valor_11
+  corte_22= corte_2*valor_22
+  corte_33= corte_3*valor_33
+  corte_44= corte_4*valor_44
+
+  mini=60
+  total = corte_11+ corte_22 +corte_33+corte_44
+  total1=corte_11+ corte_22 +corte_33
+
+  while total <= mini:
+      print("La nota aún no le alcanza para pasar: " , total)
+      corte_4 = int(input("La nota debe ser mayor:  "))
+      corte_44= corte_4*valor_44
+      total = corte_11+ corte_22 +corte_33+corte_44
+
+   
+   
+print("Con esta nota", total ," ya podrá pasar la materia ")
+
+
+
